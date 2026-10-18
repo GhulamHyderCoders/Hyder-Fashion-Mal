@@ -1,0 +1,821 @@
+
+/* ==================================================
+   01. GLOBAL CSS — پوری ویب سائٹ کی بنیادی سیٹنگز
+================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+  --wine: #551f2a;
+  --dark: #2b151a;
+  --gold: #c8a66a;
+  --cream: #f8f4ed;
+  --ink: #292220;
+  --muted: #817671;
+  --line: #e9e1d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: #fffdfa;
+  font-family: "DM Sans", Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ==================================================
+   02. TOPBAR — سب سے اوپر والا پیغام
+================================================== */
+
+.topbar {
+  padding: 10px;
+  background: var(--dark);
+  color: #f5e9d5;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+
+/* ==================================================
+   03. NAVBAR & LOGO — مینیو اور ویب سائٹ کا نام
+================================================== */
+
+.navbar {
+  background: #fffdfa;
+  border-bottom: 1px solid var(--line);
+  z-index: 1000;
+}
+
+.logo {
+  color: var(--wine);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.navbar-nav {
+  gap: 18px;
+}
+
+.nav-link {
+  color: #625a56;
+  font-size: 14px;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: var(--wine);
+}
+
+
+/* ==================================================
+   04. BUTTONS — ویب سائٹ کے بٹن
+================================================== */
+
+.btn {
+  border-radius: 2px;
+  font-size: 13px;
+  padding: 11px 18px;
+}
+
+.btn-gold {
+  color: #241719;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  font-weight: 700;
+}
+
+.btn-gold:hover {
+  background: #dfc28e;
+  border-color: #dfc28e;
+}
+
+
+/* ==================================================
+   05. HOME PAGE — ہوم پیج کا بڑا بینر
+================================================== */
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.hero {
+  min-height: 600px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, rgba(35,15,20,.9), rgba(35,15,20,.15)),
+    url("https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=1800&q=80")
+    center 35% / cover no-repeat;
+}
+
+.hero-content {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.hero h1,
+.collection-hero h1 {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: 1.08;
+  margin-bottom: 22px;
+}
+
+.hero h1 em {
+  color: #dfc28e;
+}
+
+.hero-content > p:not(.eyebrow),
+.collection-hero p:not(.eyebrow) {
+  max-width: 540px;
+  line-height: 1.9;
+  color: #eee3dc;
+  margin-bottom: 25px;
+}
+
+
+/* ==================================================
+   06. SECTION HEADINGS — ہر سیکشن کی ہیڈنگ
+================================================== */
+
+.section-space {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font: 500 clamp(28px, 4vw, 44px)/1.2
+    "Playfair Display", Georgia, serif;
+}
+
+.section-heading > p,
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+
+/* ==================================================
+   07. CATEGORY CARDS — خواتین، مرد اور Bridal کیٹیگریز
+================================================== */
+
+.category-card {
+  display: block;
+  height: 440px;
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+  color: white;
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(25,15,17,.85),
+    transparent 70%
+  );
+}
+
+.category-card > div {
+  position: absolute;
+  z-index: 1;
+  left: 24px;
+  right: 15px;
+  bottom: 25px;
+}
+
+.category-card small {
+  color: #e8d0a5;
+  letter-spacing: 1.5px;
+}
+
+.category-card h3 {
+  font: 34px "Playfair Display", Georgia, serif;
+  margin: 8px 0;
+}
+
+.category-card span {
+  font-size: 12px;
+}
+
+
+/* ==================================================
+   08. BRAND STRIP — مختلف برانڈز کے نام
+================================================== */
+
+.brand-strip {
+  padding: 38px 0;
+  background: var(--cream);
+  border-block: 1px solid var(--line);
+}
+
+.brand-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  color: #65534a;
+  font: 20px "Playfair Display", Georgia, serif;
+  letter-spacing: 2px;
+}
+
+.brand-strip small {
+  display: block;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+
+/* ==================================================
+   09. PRODUCT CARDS — تمام صفحات کے پروڈکٹ کارڈز
+   نوٹ: یہ اسٹائل مشترکہ ہے، صرف Female کا نہیں۔
+================================================== */
+
+.product-card {
+  height: 100%;
+}
+
+.product-image {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  background: var(--cream);
+}
+
+.product-photo {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.product-photo img {
+  transition: transform .4s ease;
+}
+
+.product-card:hover .product-photo img {
+  transform: scale(1.04);
+}
+
+.product-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  padding: 6px 9px;
+  background: #fffdfa;
+  color: var(--wine);
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+.add-button {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--wine);
+  padding: 12px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.add-button:hover {
+  background: var(--wine);
+  color: white;
+}
+
+.product-info {
+  padding: 14px 2px;
+}
+
+.product-brand {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.product-name {
+  font: 18px "Playfair Display", Georgia, serif;
+  margin: 6px 0;
+}
+
+.product-price {
+  color: var(--wine);
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.product-type {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.text-link {
+  color: var(--wine);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px;
+  font-size: 13px;
+}
+
+
+/* ==================================================
+   10. WOMEN / FEMALE PAGE — خواتین کا بینر
+================================================== */
+
+.collection-hero {
+  min-height: 390px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background-position: center;
+  background-size: cover;
+}
+
+.collection-hero .container {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.women-hero {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(35,15,20,.83),
+      rgba(35,15,20,.2)
+    ),
+    url("https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1500&q=80");
+}
+
+/* ==================================================
+   11. MEN / MALE PAGE — مردوں کا بینر
+================================================== */
+
+.men-hero {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(35,15,20,.85),
+      rgba(35,15,20,.2)
+    ),
+    url("https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=1500&q=80");
+}
+
+
+/* ==================================================
+   12. BRIDAL COLLECTION — دلہنوں کا بینر
+================================================== */
+
+.bridal-hero {
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(35,15,20,.85),
+      rgba(35,15,20,.2)
+    ),
+    url("https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=1500&q=80");
+}
+
+
+/* ==================================================
+   13. SEARCH & FILTERS — سرچ اور فلٹر کے آپشنز
+================================================== */
+
+.filters {
+  display: flex;
+  gap: 12px;
+}
+
+.filters input {
+  flex: 1;
+  min-width: 150px;
+}
+
+.filters .form-control,
+.filters .form-select {
+  border-radius: 0;
+  font-size: 13px;
+  min-height: 44px;
+}
+
+.empty-state {
+  padding: 55px 10px;
+  text-align: center;
+}
+
+
+/* ==================================================
+   14. FOOTER — ویب سائٹ کا نچلا حصہ
+================================================== */
+
+.footer {
+  background: #24191a;
+  color: #e9ded6;
+  padding-top: 50px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1.3fr;
+  gap: 30px;
+  padding-bottom: 40px;
+}
+
+.footer-logo {
+  color: white;
+}
+
+.footer-grid p {
+  max-width: 280px;
+  color: #b9aaa4;
+  font-size: 13px;
+  line-height: 1.8;
+  margin-top: 15px;
+}
+
+.footer-grid h5 {
+  font-size: 14px;
+  margin-bottom: 18px;
+}
+
+.footer-grid > div > a:not(.logo) {
+  display: block;
+  color: #c9bbb4;
+  font-size: 13px;
+  margin: 12px 0;
+}
+
+.footer-grid a:hover {
+  color: var(--gold);
+}
+
+
+/* ==================================================
+   15. NEWSLETTER — ای میل سبسکرپشن
+================================================== */
+
+.newsletter {
+  display: flex;
+  border-bottom: 1px solid #78696a;
+}
+
+.newsletter input {
+  width: 100%;
+  min-width: 0;
+  background: transparent;
+  color: white;
+  border: 0;
+  padding: 12px 0;
+  outline: 0;
+}
+
+.newsletter button {
+  color: var(--gold);
+  background: transparent;
+  border: 0;
+  font-size: 22px;
+}
+
+#newsletterMessage {
+  display: block;
+  color: var(--gold);
+  margin-top: 8px;
+}
+
+.copyright {
+  border-top: 1px solid #4a3b3c;
+  text-align: center;
+  padding: 18px 10px;
+  font-size: 11px;
+  color: #b5a6a0;
+}
+
+
+/* ==================================================
+   16. SHOPPING CART — کارٹ کی پوری ونڈو
+================================================== */
+
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.cart-overlay.is-open {
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.cart-backdrop {
+  position: absolute;
+  inset: 0;
+  background: #0009;
+}
+
+.cart-drawer {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: min(430px, 100%);
+  padding: 25px;
+  background: #fffdfa;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform .25s;
+}
+
+.cart-overlay.is-open .cart-drawer {
+  transform: translateX(0);
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 15px;
+}
+
+.drawer-header h3 {
+  font: 25px "Playfair Display", Georgia, serif;
+}
+
+.close-cart {
+  background: none;
+  border: 0;
+  font-size: 30px;
+}
+
+.cart-items {
+  flex: 1;
+  overflow: auto;
+  padding: 15px 0;
+}
+
+.cart-row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.cart-row img {
+  width: 70px;
+  height: 90px;
+  object-fit: cover;
+}
+
+.cart-row h4 {
+  font: 16px "Playfair Display", Georgia, serif;
+}
+
+.cart-row p {
+  color: var(--wine);
+  font-size: 12px;
+}
+
+.cart-row button {
+  margin-right: 8px;
+  border: 1px solid var(--line);
+  background: white;
+}
+
+.cart-bottom {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+
+
+/* ==================================================
+   17. COOKIE BANNER — کوکیز کا پیغام
+================================================== */
+
+.cookie-banner {
+  position: fixed;
+  z-index: 1500;
+  left: 15px;
+  right: 15px;
+  bottom: 15px;
+  max-width: 720px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 16px 20px;
+  background: white;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 35px #0002;
+}
+
+.cookie-banner p {
+  color: var(--muted);
+  font-size: 12px;
+  margin: 5px 0 0;
+}
+
+.cookie-banner[hidden] {
+  display: none;
+}
+
+
+/* ==================================================
+   18. RESPONSIVE CSS — TABLET / LAPTOP
+   991px یا اس سے چھوٹی اسکرین
+================================================== */
+
+@media (max-width: 991px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .category-card {
+    height: 360px;
+  }
+}
+
+
+/* ==================================================
+   19. RESPONSIVE CSS — MOBILE
+   767px یا اس سے چھوٹی اسکرین
+================================================== */
+
+@media (max-width: 767px) {
+  .hero {
+    min-height: 540px;
+    background-position: 58% center;
+  }
+
+  .hero-content {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .section-space {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .category-card {
+    height: 350px;
+  }
+
+  .brand-list {
+    font-size: 16px;
+  }
+
+  .collection-hero {
+    min-height: 340px;
+  }
+
+  .filters {
+    flex-direction: column;
+  }
+
+  .filters input,
+  .filters select {
+    width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px 18px;
+  }
+
+  .cookie-banner {
+    align-items: flex-start;
+  }
+}
+
+
+/* ==================================================
+   20. RESPONSIVE CSS — SMALL PHONES
+   450px یا اس سے چھوٹی اسکرین
+================================================== */
+
+@media (max-width: 450px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-card {
+    height: 390px;
+  }
+
+  .hero h1,
+  .collection-hero h1 {
+    font-size: 42px;
+  }
+
+  .product-name {
+    font-size: 16px;
+  }
+
+  .cookie-banner {
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+  }
+}
+
+
+/* ==================================================
+   21. REDUCED MOTION — اینیمیشن کم کرنے کی سیٹنگ
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+  }
+}
+
+
+/* ==================================================
+   22. TOAST NOTIFICATION — پیغام دکھانے کا ڈیزائن
+================================================== */
+
+.mall-toast {
+  position: fixed;
+  z-index: 3000;
+  bottom: 25px;
+  left: 50%;
+  transform: translate(-50%, 15px);
+  opacity: 0;
+  pointer-events: none;
+  background: #35131b;
+  color: white;
+  padding: 13px 20px;
+  font-size: 13px;
+  box-shadow: 0 5px 25px #0002;
+  transition: opacity .2s, transform .2s;
+  max-width: calc(100% - 30px);
+  text-align: center;
+}
+
+.mall-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}

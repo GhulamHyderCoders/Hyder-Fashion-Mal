@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Women's Collection | Wedding Mall</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="women">
+<div class="topbar">PAKISTANI DESIGNER FASHION — WOMEN'S EDIT</div>
+<nav class="navbar navbar-expand-lg sticky-top"><div class="container">
+  <a class="navbar-brand logo" href="index.html">WEDDING<span>MALL</span></a>
+  <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu" aria-label="Open menu"><span class="navbar-toggler-icon"></span></button>
+  <div class="collapse navbar-collapse" id="menu"><ul class="navbar-nav mx-auto">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+    <li class="nav-item"><a class="nav-link active" href="women.html">Women</a></li>
+    <li class="nav-item"><a class="nav-link" href="men.html">Men</a></li>
+    <li class="nav-item"><a class="nav-link" href="bridal.html">Bridal & Groom</a></li>
+  </ul><button class="btn btn-outline-dark" data-open-cart>Bag (<span class="cart-count">0</span>)</button></div>
+</div></nav>
+<header class="collection-hero women-hero"><div class="container"><p class="eyebrow">FORMAL · FESTIVE · TIMELESS</p><h1>Women's<br>Celebration Wear</h1><p>Discover elegant formals, colourful mehndi looks and occasion-ready outfits.</p></div></header>
+<main class="container section-space">
+  <div class="section-heading"><div><p class="eyebrow">CURATED FOR YOU</p><h2>Women's Collection</h2><p id="resultCount" class="muted">Explore the collection</p></div></div>
+  <div class="filters mb-4"><input id="productSearch" class="form-control" type="search" placeholder="Search outfits or brands..." aria-label="Search outfits"><select id="categoryFilter" class="form-select" aria-label="Filter category"><option value="all">All categories</option></select><select id="sortFilter" class="form-select" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name A–Z</option></select></div>
+  <div class="row g-4" id="productGrid"></div><div id="emptyState" class="empty-state d-none"><h3>No outfits found</h3><button class="btn btn-outline-dark" id="resetFilters">Reset Filters</button></div>
+</main>
+<footer class="footer"><div class="container footer-grid"><div><a class="logo footer-logo" href="index.html">WEDDING<span>MALL</span></a><p>Pakistani fashion for your special moments.</p></div><div><h5>Collections</h5><a href="women.html">Women</a><a href="men.html">Men</a><a href="bridal.html">Bridal & Groom</a></div><div><h5>Customer Care</h5><a href="#" data-open-privacy>Privacy Notice</a><a href="mailto:hello@weddingmall.example">Contact Us</a></div><div><h5>Join Our List</h5><form id="newsletterForm" class="newsletter"><input type="email" placeholder="Your email" required aria-label="Your email"><button>→</button></form><small id="newsletterMessage"></small></div></div><div class="copyright">© <span data-year></span> Wedding Mall · Developer Ghulam Hyder</div></footer>
+<div class="cart-overlay" id="cartOverlay" aria-hidden="true"><div class="cart-backdrop" data-close-cart></div><aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping bag"><div class="drawer-header"><h3>Your Shopping Bag</h3><button class="close-cart" data-close-cart aria-label="Close">×</button></div><div id="cartItems" class="cart-items"></div><div class="cart-bottom"><p>Subtotal: <strong id="cartTotal">Rs 0</strong></p><small>Demo checkout. No payment is collected.</small><button class="btn btn-gold w-100 mt-3" id="checkoutButton">Continue</button></div></aside></div>
+<div class="cookie-banner" id="cookieBanner"><div><strong>Your privacy matters.</strong><p>This demo remembers your cart and cookie preference in this browser.</p></div><button class="btn btn-dark btn-sm" id="acceptCookies">Accept</button></div>
+<div class="modal fade" id="privacyModal" tabindex="-1"><div class="modal-dialog modal-dialog-centered"><div class="modal-content"><div class="modal-header"><h5>Privacy Notice</h5><button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">This demo does not process real orders or payments. Cart data stays in your browser. A live shop needs secure backend services and a complete privacy policy.</div></div></div></div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script><script src="script.js"></script>
+</body></html>
